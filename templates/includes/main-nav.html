@@ -1,0 +1,41 @@
+<div class="collapse navbar-collapse" id="main-nav">
+	<ul class="navbar-nav w-auto mx-auto">
+
+
+		<li class="nav-item dropdown">
+			<a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Sort Products
+			</a>
+			<div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+				<a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+				<a href="{% url 'products' %}?sort=miles&direction=asc" class="dropdown-item ">By Range</a>
+				<a href="{% url 'products' %}?sort=time&direction=asc" class="dropdown-item ">By Charge Time</a>
+				<a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+			</div>
+		</li>
+
+		<li class="nav-item dropdown">
+			<a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Child or Adult
+			</a>
+			<div class="dropdown-menu border-0" aria-labelledby="Categorys">
+				<a href="{% url 'products' %}?category=child" class="dropdown-item">Child</a>
+				<a href="{% url 'products' %}?category=adult" class="dropdown-item">Adult</a>
+			</div>
+		</li>
+
+		<li class="nav-item dropdown">
+			<a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				More Info
+			</a>
+			<div class="dropdown-menu border-0" aria-labelledby="About">
+				<a href="{% url 'about' %}" class="dropdown-item">About</a>
+				<a href="{% url 'contact' %}" class="dropdown-item">Contact</a>
+
+			</div>
+		</li>
+
+       

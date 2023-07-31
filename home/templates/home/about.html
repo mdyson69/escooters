@@ -1,0 +1,65 @@
+{{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+            
+ <h2 class="logo-font">Welcome to E Scooters</h2>
+
+<p>This is my fourth milestone project for the Full Stack Developer Diploma with the Code Institute.<br><br></p>
+    <h2 class="logo-font">About</h2>
+<p>This web application is a fully fledged e commerce shop.</p>
+<p>Developed for use as a demostration only.</p>
+<p><br>Please do not use your own credit card details while checking out as I will not be sending out any products.<p>
+<p><br>It is illegal to use an e-scooter on a public road, pavement, cycle lane or bridleway. <br>E-scooters should only be ridden on private land with permission of the land owner. <br><br>For further information please <a href="https://www.gov.uk/government/publications/powered-transporters/information-sheet-guidance-on-powered-transporters">click here</a>.</p>
+
+
+<div class="btt-button shadow-sm rounded-0 border border-black">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>	
+    </div>
+{% endblock %}
+
+ {% block postloadjs %}
+    {{ block.super }}
+<script type="text/javascript">
+	$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+</script>
+
+<script type="text/javascript">
+	$('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if(selectedVal != "reset"){
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+</script>
+{% endblock %}
